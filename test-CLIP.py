@@ -20,7 +20,7 @@ from utils.clip_score import L_clip_from_feature
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 CLIP_model, preprocess = clip.load("ViT-B/32", device = torch.device("cpu"), download_root="./clip_model/")#ViT-B/32
-model_path = './prompt-ckpt/model_iter_12000_klrate.pth'
+model_path = './prompt-ckpt/prompt_iter_12000_klrate.pth'
 CLIP_model.load_state_dict(torch.load(model_path, map_location=device))
 CLIP_model.to(device)
 for para in CLIP_model.parameters():
